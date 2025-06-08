@@ -1,3 +1,5 @@
+![GitHub Workflow Status](https://github.com/HighScientist22/ban-username-filter/actions/workflows/plugin-check.yml/badge.svg)
+
 # 🌿 Nicotine+ Username Filter Plugin
 
 A Nicotine+ plugin that automatically bans users with offensive or suspicious usernames and sends them a mellow warning. It will unban them if they change their name.
