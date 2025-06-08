@@ -1,1 +1,31 @@
-(workflow YAML content from earlier)
+```yaml
+name: Lint & Test Plugin
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check-plugin:
+    runs-on: ubuntu-latest
+    name: Run flake8 and test import
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: Install flake8
+        run: pip install flake8
+
+      - name: Run flake8
+        run: flake8 ban_username_filter.py --max-line-length=100
+
+      - name: Import Test
+        run: python -c "import ban_username_filter"
+
